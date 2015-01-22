@@ -1,0 +1,76 @@
+(defn recur-factorial [number]
+  (let [helper (fn [acc n]
+                 (if (zero? n)
+                   acc
+                   (recur (* acc n) (dec n))))]
+    (helper 1 number)))
+(recur-factorial 4)
+(defn power [base exp]  (let [helper (fn [n result] (if (zero? n)
+                                                      result
+                                                      (recur (* result base) (dec n))))]
+                          (helper exp 1)))
+(power 2 2)
+(fn [n result] (if (zero? n)
+                                                      result
+                                                      (recur (* result base) (dec n))))
+(defn testing [n result] (if (zero? n)
+                                                      result
+                                                      (recur (* result base) (dec n))))
+(defn testing [n result] (if (zero? n)
+                                                      result
+                                                      (recur (* result base) (dec n))))
+(defn testing [n base result] (if (zero? n)
+                                                      result
+                                                      (recur (* result base) base (dec n))))
+(testing 2 2 1)
+(defn testing [n base result] (if (zero? n) result (recur (* result base) base (dec n))))
+(testing 2 2 1)
+(defn testing [n base result] (if (zero? n) result (recur (* result base) base 0)))
+(testing 2 2 1)
+(defn testing [n base result] (if (zero? n) result (recur (* result base) base (- n 1))))
+(testing 2 2 1)
+(defn power [base exp]  (let [helper (fn [n result] (if (zero? n)
+                                                      result
+                                                      (recur (dec n) (* result base))))]
+                          (helper exp 1)))
+(power 2 2)
+quit
+(contains? 3 [1 2 3 4 5])
+(contains? 3 #{1 2 3 4 5})
+(contains? #{1 2 3 4 5} 3)
+(contains? [1 2 3 4 5] 3)
+quit
+(defn cut-at-repetition [a-seq] (loop [gathered [] left a-seq]
+                                  (if (or (empty? left) (contains? gathered (first left)))
+                                    gathered
+                                    (recur (conj gathered (first left)) (rest left)))))
+(cut-at-repetition [1 1 1])
+(cut-at-repetition [])
+(cut-at-repetition [1])
+(cut-at-repetition [1 2 3 ])
+(cut-at-repetition [1 2 3 3 3])
+(cut-at-repetition [1 1 1])
+(defn cut-at-repetition [a-seq] (loop [gathered [] left a-seq]
+                                  (if (or (empty? left) (contains? gathered (first left)))
+                                    (rest gathered)
+                                    (recur (conj gathered (first left)) (rest left)))))
+(cut-at-repetition [1 1 1])
+(cut-at-repetition [])
+quit
+(defn cut-at-repetition [a-seq] (loop [gathered [] left a-seq]
+                                  (if (or (empty? left) (contains? gathered (first left)))
+                                    gathered
+                                    (recur (conj gathered (first left)) (rest left)))))
+(cut-at-repetition [1 1 1])
+(cut-at-repetition [1 2 :a :b :a])
+(cut-at-repetition [1 2 :a :b :a :a])
+quit
+(defn cut-at-repetition [a-seq] (loop [gathered [] left a-seq]
+                                  (if (or (empty? left) (contains? gathered (first left)))
+                                    gathered
+                                    (recur (conj gathered (first left)) (rest left)))))
+(cut-at-repetition [:cat :dog :house :milk 1 :cat :dog])
+(contains [:cat :dog :house :milk] 1)
+(contains? [:cat :dog :house :milk] 1)
+(contains? #{:cat :dog :house :milk} 1)
+quit
